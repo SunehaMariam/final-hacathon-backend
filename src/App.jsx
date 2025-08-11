@@ -5,7 +5,7 @@ import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import Builder from "./pages/Builder.jsx";
 import Preview from "./pages/Preview.jsx";
-import Navbar from "./components/navbar.jsx";
+import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
 
 export default function App() {
