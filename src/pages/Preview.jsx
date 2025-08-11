@@ -19,7 +19,7 @@ export default function Preview() {
       }
 
       try {
-        const res = await axios.get("http://localhost:5000/api/profile", {
+        const res = await axios.get("https://heckathon-backend-3.onrender.com/api/profile", {
           headers: { Authorization: `Bearer ${token}` },
         });
 

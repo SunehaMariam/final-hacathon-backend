@@ -19,7 +19,7 @@ export default function Builder() {
   useEffect(() => {
     if (isEditMode) {
       axios
-        .get("http://localhost:5000/api/profile", {
+        .get("https://heckathon-backend-3.onrender.com", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         })
         .then((res) => {
@@ -59,14 +59,14 @@ export default function Builder() {
     try {
       if (isEditMode) {
         await axios.put(
-          "http://localhost:5000/api/profile",
+          "https://heckathon-backend-3.onrender.com/api/profile",
           payload,
           { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
         );
         alert("Portfolio updated successfully!");
       } else {
         await axios.post(
-          "http://localhost:5000/api/profile",
+          "https://heckathon-backend-3.onrender.com/api/profile",
           payload,
           { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
         );
