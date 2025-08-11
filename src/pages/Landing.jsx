@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Dashboard() {
+export default function Landing() {
   const navigate = useNavigate();
 
   return (
@@ -25,10 +25,10 @@ export default function Dashboard() {
         {/* Create */}
         <div
           onClick={() => navigate("/builder")}
-          className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition cursor-pointer"
+          className="bg-white shadow rounded-lg p-15 hover:shadow-lg transition cursor-pointer hover:bg-gray-800 hover:text-white"
         >
           <h2 className="text-lg font-semibold">Create Portfolio</h2>
-          <p className="text-sm text-gray-600 mt-2">
+          <p className="text-sm text-gray-400 mt-2">
             Start building your new portfolio.
           </p>
         </div>
@@ -36,10 +36,10 @@ export default function Dashboard() {
         {/* Edit */}
         <div
           onClick={() => navigate("/builder?edit=true")}
-          className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition cursor-pointer"
+          className="bg-white shadow rounded-lg p-16 hover:shadow-lg transition cursor-pointer hover:bg-gray-800 hover:text-white"
         >
           <h2 className="text-lg font-semibold">Edit Portfolio</h2>
-          <p className="text-sm text-gray-600 mt-2">
+          <p className="text-sm text-gray-400 mt-2">
             Make changes to your existing portfolio.
           </p>
         </div>
@@ -47,10 +47,10 @@ export default function Dashboard() {
         {/* Preview */}
         <div
           onClick={() => navigate("/preview")}
-          className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition cursor-pointer"
+          className="bg-white shadow rounded-lg p-15 hover:shadow-lg transition cursor-pointer hover:bg-gray-800 hover:text-white"
         >
           <h2 className="text-lg font-semibold">Preview Portfolio</h2>
-          <p className="text-sm text-gray-600 mt-2">
+          <p className="text-sm text-gray-400 mt-2">
             See how your portfolio looks before publishing.
           </p>
         </div>
