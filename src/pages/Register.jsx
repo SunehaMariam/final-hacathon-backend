@@ -15,7 +15,7 @@ export default function Register() {
     e.preventDefault();
     setError("");
     try {
-      await axios.post("http://localhost:5000/api/auth/register", formData);
+      await axios.post("https://heckathon-backend-3.onrender.com/api/auth/register",formData);
       navigate("/login");
     } catch (err) {
       setError(err.response?.data?.message || "Registration failed");
