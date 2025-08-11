@@ -23,8 +23,8 @@ export default function Register() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-50">
-      <h1>WELCOME TO PORTFOLIO BUILDER</h1>
+    <div className="flex flex-col justify-center items-center min-h-screen bg-gray-50">
+      <h1 className="text-3xl">WELCOME TO PORTFOLIO BUILDER</h1>
       <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
         <h2 className="text-2xl font-bold text-center mb-6">Sign Up</h2>
         {error && <p className="text-red-500 text-center mb-4">{error}</p>}
