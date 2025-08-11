@@ -15,7 +15,7 @@ export default function Login() {
     e.preventDefault();
     setError("");
     try {
-      const res = await axios.post("https://heckathon-backend-3.onrender.com/api/auth/login", formData, { withCredentials: true });
+      const res = await axios.post("https://heckathon-backend-feqo.vercel.app/api/auth/login", formData, { withCredentials: true });
       localStorage.setItem("token", res.data.token);
       navigate("/Landing");
     } catch (err) {

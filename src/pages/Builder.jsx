@@ -59,7 +59,7 @@ export default function Builder() {
     try {
       if (isEditMode) {
         await axios.put(
-          "https://heckathon-backend-3.onrender.com/api/profile",
+          "https://heckathon-backend-feqo.vercel.app/api/profile",
           payload,
           { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
         );
