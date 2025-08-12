@@ -58,14 +58,14 @@ export default function Builder() {
     try {
       if (isEditMode) {
         await axios.put(
-          "https://final-hacathon-frontend.vercel.app//api/profile",
+          "https://final-hacathon-frontend.vercel.app/api/profile",
           payload,
           { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
         );
         alert("Portfolio updated successfully!");
       } else {
         await axios.post(
-          "https://final-hacathon-frontend.vercel.app//api/profile",
+          "https://final-hacathon-frontend.vercel.app/api/profile",
           payload,
           { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
         );
