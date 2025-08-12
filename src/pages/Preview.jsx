@@ -18,7 +18,7 @@ export default function Preview() {
 
       try {
         const res = await axios.get(
-          "https://heckathon-backend-feqo.vercel.app/api/profile",
+          "https://final-hacathon-frontend.vercel.app/api/profile",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
