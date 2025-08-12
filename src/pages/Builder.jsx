@@ -18,7 +18,7 @@ export default function Builder() {
   useEffect(() => {
     if (isEditMode) {
       axios
-        .get("https://heckathon-backend-3.onrender.com", {
+        .get("https://final-hacathon-frontend.vercel.app/", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         })
         .then((res) => {
@@ -58,14 +58,14 @@ export default function Builder() {
     try {
       if (isEditMode) {
         await axios.put(
-          "https://heckathon-backend-feqo.vercel.app/api/profile",
+          "https://final-hacathon-frontend.vercel.app//api/profile",
           payload,
           { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
         );
         alert("Portfolio updated successfully!");
       } else {
         await axios.post(
-          "https://heckathon-backend-3.onrender.com/api/profile",
+          "https://final-hacathon-frontend.vercel.app//api/profile",
           payload,
           { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
         );
