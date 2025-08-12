@@ -16,7 +16,7 @@ export default function Login() {
     setError("");
     try {
       const res = await axios.post(
-        "https://final-hacathon-frontend.vercel.app//api/auth/login",
+        "https://heckathon-backend-feqo.vercel.app//api/auth/login",
         formData,
         { withCredentials: true }
       );
