@@ -15,7 +15,11 @@ export default function Login() {
     e.preventDefault();
     setError("");
     try {
-      const res = await axios.post("https://heckathon-backend-feqo.vercel.app/api/auth/login", formData, { withCredentials: true });
+      const res = await axios.post(
+        "https://heckathon-backend-feqo.vercel.app/api/auth/login",
+        formData,
+        { withCredentials: true }
+      );
       localStorage.setItem("token", res.data.token);
       navigate("/Landing");
     } catch (err) {
@@ -24,39 +28,45 @@ export default function Login() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-50">
-      <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
-        <h2 className="text-2xl font-bold text-center mb-6">Login</h2>
-        {error && <p className="text-red-500 text-center mb-4">{error}</p>}
-        <form onSubmit={handleSubmit} className="space-y-4">
+    <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 px-4">
+      <div className="bg-white rounded-3xl p-10 w-full max-w-md shadow-2xl hover:shadow-3xl transform hover:scale-105 transition duration-300">
+        <h2 className="text-4xl font-extrabold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-pink-600">
+          Login
+        </h2>
+        {error && (
+          <p className="text-red-600 text-center mb-6 font-semibold">{error}</p>
+        )}
+        <form onSubmit={handleSubmit} className="space-y-6">
           <input
             type="email"
             name="email"
             placeholder="Email"
-            className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border-2 border-indigo-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-4 focus:ring-indigo-400 transition"
             value={formData.email}
             onChange={handleChange}
             required
+            autoComplete="email"
           />
           <input
             type="password"
             name="password"
             placeholder="Password"
-            className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border-2 border-indigo-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-4 focus:ring-indigo-400 transition"
             value={formData.password}
             onChange={handleChange}
             required
+            autoComplete="current-password"
           />
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+            className="w-full bg-indigo-600 text-white font-bold py-3 rounded-xl shadow-lg hover:bg-indigo-700 transform hover:scale-105 transition duration-300"
           >
             Login
           </button>
         </form>
-        <p className="text-sm text-center mt-4">
+        <p className="text-center text-gray-600 mt-6 text-sm">
           Don't have an account?{" "}
-          <Link to="/" className="text-blue-600 hover:underline">
+          <Link to="/" className="text-indigo-700 font-semibold hover:underline">
             Sign up
           </Link>
         </p>

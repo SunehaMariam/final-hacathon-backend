@@ -15,7 +15,7 @@ export default function Register() {
     e.preventDefault();
     setError("");
     try {
-      await axios.post("https://heckathon-backend-feqo.vercel.app/api/auth/register",formData);
+      await axios.post("https://heckathon-backend-feqo.vercel.app/api/auth/register", formData);
       navigate("/login");
     } catch (err) {
       setError(err.response?.data?.message || "Registration failed");
@@ -23,49 +23,62 @@ export default function Register() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen bg-gray-50">
-      <h1 className="text-3xl">WELCOME TO PORTFOLIO BUILDER</h1>
-      <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
-        <h2 className="text-2xl font-bold text-center mb-6">Sign Up</h2>
-        {error && <p className="text-red-500 text-center mb-4">{error}</p>}
-        <form onSubmit={handleSubmit} className="space-y-4">
+    <div className="min-h-screen bg-gradient-to-tr from-green-200 via-teal-300 to-blue-200 flex flex-col justify-center items-center px-4">
+      <h1 className="text-4xl font-extrabold text-teal-700 mb-10 tracking-wide text-center">
+        WELCOME TO PORTFOLIO BUILDER
+      </h1>
+
+      <div className="bg-white shadow-2xl rounded-3xl p-10 w-full max-w-md">
+        <h2 className="text-3xl font-bold text-center mb-8 text-teal-600">Sign Up</h2>
+        {error && (
+          <p className="text-red-600 text-center mb-6 font-semibold">{error}</p>
+        )}
+
+        <form onSubmit={handleSubmit} className="space-y-6">
           <input
             type="text"
             name="name"
             placeholder="Full Name"
-            className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border-2 border-teal-300 rounded-xl px-5 py-3 focus:outline-none focus:ring-4 focus:ring-teal-400 transition text-lg"
             value={formData.name}
             onChange={handleChange}
             required
+            autoComplete="name"
           />
+
           <input
             type="email"
             name="email"
             placeholder="Email"
-            className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border-2 border-teal-300 rounded-xl px-5 py-3 focus:outline-none focus:ring-4 focus:ring-teal-400 transition text-lg"
             value={formData.email}
             onChange={handleChange}
             required
+            autoComplete="email"
           />
+
           <input
             type="password"
             name="password"
             placeholder="Password"
-            className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border-2 border-teal-300 rounded-xl px-5 py-3 focus:outline-none focus:ring-4 focus:ring-teal-400 transition text-lg"
             value={formData.password}
             onChange={handleChange}
             required
+            autoComplete="new-password"
           />
+
           <button
             type="submit"
-            className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition"
+            className="w-full bg-gradient-to-r from-green-600 to-teal-600 text-white font-bold py-3 rounded-xl shadow-lg hover:from-green-700 hover:to-teal-700 transition transform hover:scale-105"
           >
             Sign Up
           </button>
         </form>
-        <p className="text-sm text-center mt-4">
+
+        <p className="text-center text-teal-700 mt-8 text-lg">
           Already have an account?{" "}
-          <Link to="/login" className="text-blue-600 hover:underline">
+          <Link to="/login" className="font-semibold hover:underline">
             Login
           </Link>
         </p>
@@ -73,4 +86,3 @@ export default function Register() {
     </div>
   );
 }
-
