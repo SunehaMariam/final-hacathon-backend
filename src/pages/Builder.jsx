@@ -18,7 +18,7 @@ export default function Builder() {
   useEffect(() => {
     if (isEditMode) {
       axios
-        .get("https://final-hacathon-frontend.vercel.app/", {
+        .get("https://heckathon-backend-3.onrender.com", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         })
         .then((res) => {
@@ -78,8 +78,8 @@ export default function Builder() {
     }
   };
 
-  return (
-    <body className="bg-gradient-to-r from-indigo-50 to-pink-50 min-h-screen">
+return (
+  <div className="bg-gradient-to-r from-indigo-50 to-pink-50 min-h-screen">
     <div className="max-w-3xl mx-auto p-8 bg-gradient-to-tr from-indigo-50 via-purple-50 to-pink-50 rounded-3xl shadow-xl mt-12 border border-indigo-200">
       <h1 className="text-4xl font-extrabold mb-8 text-center text-indigo-700 tracking-wide">
         {isEditMode ? "Edit Your Portfolio" : "Create Your Portfolio"}
@@ -138,6 +138,6 @@ export default function Builder() {
         </button>
       </form>
     </div>
-    </body>
-  );
+  </div>
+);
 }
